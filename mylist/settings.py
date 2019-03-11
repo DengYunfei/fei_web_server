@@ -25,7 +25,7 @@ SECRET_KEY = 'nyhcf!#(s=ziu4)4x)322+hdiwi$-5rdf779l!!8e5dm!6e9p2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['113.235.107.1','feifei.iask.in']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 我增加的App
+    'my_app',
 ]
 
 MIDDLEWARE = [
