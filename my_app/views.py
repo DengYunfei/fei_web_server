@@ -3,12 +3,15 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from .forms import TopicForm, EntryForm
 from .models import Topic
+from datetime import datetime
+import json
 
 
 # Create your views here.
 def web_server(request):
     value = request.GET.get('message')
-    return HttpResponse(value)
+    data = {"date": datetime.now().strftime('%Y-%m-%d %H:%M:%S'), "message": value}
+    return HttpResponse(json.dumps(data), content_type='application/json')
 
 def index(request):
     return render(request, 'my_app/index.html')
