@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Topic(models.Model):
     """"""
@@ -10,8 +11,9 @@ class Topic(models.Model):
         """"""
         return self.text
 
+
 class Entry(models.Model):
-    topic = models.ForeignKey(Topic,Topic)
+    topic = models.ForeignKey("Topic", models.CASCADE)
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 
@@ -19,4 +21,4 @@ class Entry(models.Model):
         verbose_name_plural = 'entries'
 
     def __str__(self):
-        return self.text[:50]+'...'
+        return self.text[:50] + '...'
